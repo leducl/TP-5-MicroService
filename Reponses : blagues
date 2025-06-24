@@ -1,6 +1,6 @@
 3.1 Pourquoi faire des petits services ?
 Pourquoi voudrait-on diviser un gros service web en plusieurs morceaux plus petits ?
-→ Pour plus de modularité, de maintenance et de réutilisabilité.
+→ Pour plus de modularité, de maintenance et de réutilisabilité / stabilité.
 
 Imaginez que vous travaillez sur un gros projet. Que se passe-t-il si vous devez modifier une seule fonctionnalité ? Est-ce facile ? Risqué ?
 → C’est risqué et compliqué, car tout est lié.
