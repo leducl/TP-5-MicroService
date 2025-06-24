@@ -32,10 +32,10 @@ Peut-on interroger la météo d’hier ou de demain avec cette architecture ?
 
 6 Questions sur l’ORM
 Pourquoi voudrait-on éviter d’écrire directement des requêtes SQL à la main ?
-→ Pour éviter les erreurs, gagner du temps et sécuriser les accès.
+→ Non, il vaut mieux exposer une API dédiée : la base n’est pas faite pour être partagée directement entre services, cela crée des dépendances fortes et des problèmes de sécurité
 
 Que gagne-t-on en utilisant un ORM comme SQLAlchemy ?
-→ Un code plus lisible et portable.
+→  On gagne en lisibilité, en productivité, en sécurité (contre les injections), et on manipule les données comme des objets Python
 
 Est-ce que l’ORM vous empêche complètement d’accéder au SQL si besoin ?
 → Non, on peut toujours écrire du SQL brut.
@@ -44,5 +44,5 @@ Est-ce que le code Python devient plus clair ou plus opaque avec un ORM ?
 → Plus clair au début, mais peut devenir complexe sur des cas avancés.
 
 À quel moment l’ORM peut devenir un inconvénient ?
-→ Sur les performances ou les requêtes très spécifiques.
+→ Quand les performances sont critiques, pour les requêtes complexes, ou quand on a besoin d’un contrôle précis sur le SQL généré
 
