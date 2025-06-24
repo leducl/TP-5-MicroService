@@ -32,5 +32,3 @@ Est-il raisonnable d’exposer le docker.sock à un reverse proxy ? Quels avanta
 
 Pourrait-on imaginer un scénario où l’on utilise Traefik pour les services internes et Nginx pour l’exposition publique ? Pourquoi ?
 → Oui : Traefik pour dev/Docker, Nginx pour frontal web externe avec CDN, sécurité.
-
-
