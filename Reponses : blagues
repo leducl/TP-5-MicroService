@@ -16,7 +16,7 @@ Avez-vous déjà vu ou utilisé un site ou une appli qui semblait “modulaire�
 
 3.2 Comment découper un service ?
 Sur quels critères peut-on séparer un gros service en plusieurs petits ?
-→ Par fonctionnalité, type de données ou public visé.
+→ Les services ne doivent pas être fortement liés. Ils doivent pouvoir évoluer, être déployés ou réparés indépendamment. Tout ce qui est dans un service doit être cohérent et lié fonctionnellement. De plus chaque microservice doit gérer une fonctionnalité unique
 
 Faut-il découper par fonctionnalité (ex : blague, météo, cantine…) ? Par type de donnée ? Par public cible ?
 → Cela dépend du contexte, mais souvent par fonctionnalité.
