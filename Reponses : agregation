@@ -1,1 +1,36 @@
+2 Quelques petites questions
+Ce service fait deux appels HTTP internes. Est-ce efficace ? Pourquoi ?
+→ Pas toujours efficace (plus lent), mais permet de centraliser la réponse.
+
+Que se passe-t-il si l’un des deux services répond avec une erreur ou met trop de temps ?
+→ L’agrégateur doit gérer les erreurs et les délais pour éviter de planter.
+
+Peut-on réutiliser ce service dans d’autres cas (email, impression, vocal) ?
+→ Oui, s’il est bien conçu.
+
+Quelle est la différence entre un service “client” (ex : navigateur) et ce nouveau service ?
+→ Le client final affiche, le service agrégateur orchestre.
+
+6.1 Questions d’exploration (reverse proxy)
+Quelles sont les principales différences entre la configuration manuelle d’un nginx.conf et l’approche déclarative de Traefik ?
+→ Nginx est manuel, Traefik détecte automatiquement les services via Docker.
+
+Dans quel type de projet Caddy pourrait-il être plus avantageux que Traefik ?
+→ Projets simples ou personnels : config plus courte et HTTPS auto.
+
+Que se passe-t-il si un service change de nom ou de port dans votre environnement Docker ? Lequel de ces outils gère cela automatiquement ?
+→ Traefik le gère automatiquement via Docker labels.
+
+Lequel de ces outils vous semble le plus adapté à un usage en production ? Pourquoi ?
+→ Traefik ou Nginx selon les besoins : Traefik pour Docker, Nginx pour du robuste classique.
+
+Comment chacun de ces reverse proxies gère-t-il la génération et le renouvellement des certificats SSL ?
+→ Caddy et Traefik le font automatiquement ; Nginx a besoin de configuration manuelle.
+
+Est-il raisonnable d’exposer le docker.sock à un reverse proxy ? Quels avantages cela apporte-t-il ? Quels risques cela peut-il poser ?
+→ Avantage : auto-détection. Risque : gros accès root à Docker, donc vulnérable si compromis.
+
+Pourrait-on imaginer un scénario où l’on utilise Traefik pour les services internes et Nginx pour l’exposition publique ? Pourquoi ?
+→ Oui : Traefik pour dev/Docker, Nginx pour frontal web externe avec CDN, sécurité.
+
 
