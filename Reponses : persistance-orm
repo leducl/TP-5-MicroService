@@ -1,6 +1,6 @@
 3.1 Sur la base de données
 Pourquoi ajouter une base de données à un service météo aussi simple ? Est-ce justifié ?
-→ Pour éviter les appels redondants et ajouter un cache local.
+→ Oui, pour éviter les appels redondants et ajouter un cache local, mais aussi pour manipuler les données facilement avec un ORM, standardiser la persistance, et préparer une architecture plus propre 
 
 Est-ce que chaque microservice devrait avoir sa propre base, ou peut-on les partager ?
 → En général, chaque service a sa base pour éviter les dépendances.
