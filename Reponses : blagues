@@ -3,7 +3,7 @@ Pourquoi voudrait-on diviser un gros service web en plusieurs morceaux plus peti
 → Pour plus de modularité, de maintenance et de réutilisabilité / stabilité.
 
 Imaginez que vous travaillez sur un gros projet. Que se passe-t-il si vous devez modifier une seule fonctionnalité ? Est-ce facile ? Risqué ?
-→ C’est risqué et compliqué, car tout est lié.
+→ C’est risqué et compliqué, car les composants sont souvent fortement couplés : un changement peut entraîner des effets de bord inattendus ailleurs
 
 Peut-on confier un petit service à une autre équipe ou un autre développeur sans qu’il ait besoin de connaître tout le reste ?
 → Oui, s’il est bien isolé et documenté.
