@@ -1,1 +1,48 @@
+3.1 Sur la base de données
+Pourquoi ajouter une base de données à un service météo aussi simple ? Est-ce justifié ?
+→ Pour éviter les appels redondants et ajouter un cache local.
+
+Est-ce que chaque microservice devrait avoir sa propre base, ou peut-on les partager ?
+→ En général, chaque service a sa base pour éviter les dépendances.
+
+Que gagne-t-on (et que perd-on) en utilisant une base relationnelle plutôt qu’un fichier ou un dictionnaire Python ?
+→ On gagne en fiabilité et requêtes avancées, mais on perd en simplicité.
+
+Que permet une base comme MySQL que ne permet pas un fichier JSON ?
+→ Les requêtes complexes, la persistance durable, la sécurité et la scalabilité.
+
+Si on voulait partager cette météo avec d’autres services, la base est-elle une bonne interface ?
+→ Non directement ; mieux vaut passer par une API dédiée.
+
+Peut-on facilement sauvegarder/exporter les données ? Et les restaurer ?
+→ Oui, grâce aux outils de BDD (dumps, backups, etc.).
+
+3.2 Sur les performances et la scalabilité
+Est-ce que l’ajout d’une BDD rend le service plus rapide ? Plus lent ?
+→ Plus rapide si on évite les appels externes ; plus lent sinon.
+
+Que se passe-t-il si plusieurs clients envoient des requêtes simultanément ?
+→ La BDD gère les accès concurrents, mais il faut prévoir la charge.
+
+Peut-on mettre à jour une donnée météo sans recontacter l’API externe ?
+→ Oui, si on accepte que les données ne soient pas en temps réel.
+
+Peut-on interroger la météo d’hier ou de demain avec cette architecture ?
+→ Pas avec le service actuel, mais c’est possible avec l’API open-meteo.
+
+6 Questions sur l’ORM
+Pourquoi voudrait-on éviter d’écrire directement des requêtes SQL à la main ?
+→ Pour éviter les erreurs, gagner du temps et sécuriser les accès.
+
+Que gagne-t-on en utilisant un ORM comme SQLAlchemy ?
+→ Un code plus lisible et portable.
+
+Est-ce que l’ORM vous empêche complètement d’accéder au SQL si besoin ?
+→ Non, on peut toujours écrire du SQL brut.
+
+Est-ce que le code Python devient plus clair ou plus opaque avec un ORM ?
+→ Plus clair au début, mais peut devenir complexe sur des cas avancés.
+
+À quel moment l’ORM peut devenir un inconvénient ?
+→ Sur les performances ou les requêtes très spécifiques.
 
